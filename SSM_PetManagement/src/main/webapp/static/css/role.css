@@ -1,0 +1,444 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+#first {
+    background-color: #F9F9F9;
+    height: 50px;
+    border: 1px #E4E4E4 solid;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 30px;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    color: #555555;
+    font-size: 14px;
+}
+
+#body {
+    height: 100%;
+    width: 100%;
+    border-color: rgba(228, 228, 228, 1);
+    background-color: white;
+}
+
+.phone {
+    border: 1px #DBDBDB solid;
+    left: 0px;
+    top: 0px;
+    width: 350px;
+    height: 36px;
+    padding: 3px 2px 3px 2px;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: left;
+    outline: none;
+    margin-left: 50px;
+}
+
+.img {
+    left: 0px;
+    top: 0px;
+    margin-left: 20px;
+}
+
+.img,
+#bodySearch input {
+    vertical-align: middle;
+    margin-top: 50px;
+}
+
+.add {
+    left: 0px;
+    top: 0px;
+    width: 101px;
+    height: 36px;
+    background: inherit;
+    background-color: rgba(229, 229, 229, 1);
+    border: none;
+    border-radius: 7px;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #555555;
+    line-height: 30px;
+    margin-left: 20px;
+}
+
+.clean {
+    left: 0px;
+    top: 0px;
+    width: 84px;
+    height: 36px;
+    background: inherit;
+    background-color: rgba(229, 229, 229, 1);
+    border: none;
+    border-radius: 7px;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #555555;
+    line-height: 30px;
+    margin-left: 15px;
+}
+
+.add:hover {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+.clean:hover {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+#bodyName {
+    left: 0px;
+    top: 0px;
+    height: 40px;
+    background: inherit;
+    background-color: rgba(234, 234, 234, 1);
+    border-style: solid;
+    border-color: rgba(228, 228, 228, 1);
+    border-radius: 0px;
+    font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 14px;
+    text-align: left;
+    line-height: 28px;
+    color: #666666;
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-left: 18px;
+}
+
+#bodyTable {
+    height: 430px;
+}
+
+th {
+    left: 0px;
+    top: 0px;
+    height: 40px;
+    background: inherit;
+    background-color: rgba(249, 250, 252, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(230, 230, 230, 1);
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: '微软雅黑 Bold', '微软雅黑 Regular', '微软雅黑';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+    line-height: 26px;
+}
+
+th:nth-child(1),
+th:nth-child(2),
+th:nth-child(3),
+th:nth-child(6),
+th:nth-child(7) {
+    width: 107px;
+}
+
+th:nth-child(4),
+th:nth-child(5),
+th:nth-child(8) {
+    width: 175px;
+}
+
+th:nth-child(9) {
+    width: 380px;
+}
+
+td{
+    left: 0px;
+    top: 0px;
+    height: 40px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(230, 230, 230, 1);
+    border-radius: 0px;
+    box-shadow: none;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+    line-height: 22px;
+}
+
+td:last-child input {
+    left: 0px;
+    top: 0px;
+    width: 74px;
+    height: 30px;
+    background: inherit;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 7px;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #555555;
+    margin-left: 30px;
+}
+
+td:last-child input:nth-child(1):hover {
+    color: #1ABC9C;
+}
+
+td:last-child input:nth-child(2):hover {
+    color: red;
+}
+
+#pageNo {
+    height: 70px;
+    background-color: #F3F3F3;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.ot {
+    height: 60px;
+    font-family: '微软雅黑';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    color: #95A5A6;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#addbutton {
+    display: none;
+    border-width: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 454px;
+    height: 711px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #1ABC9C;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: none;
+}
+
+#addbutton form p:nth-child(1) {
+    font-family: '黑体 Bold', '黑体';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    color: #1ABC9C;
+}
+
+#addbutton form p span {
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    color: #1ABC9C;
+    font-size: 18px;
+    text-align: right;
+}
+
+#addbutton form p input,form p select{
+    width: 300px;
+    height: 30px;
+    padding: 3px 2px 3px 2px;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    outline: none;
+    border: 1px #1ABC9C solid;
+    margin-top: 10px;
+}
+
+#addbutton form p select{
+    margin-left: 30px;
+}
+
+#addbutton .but1 {
+    width: 124px;
+    height: 38px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(26, 188, 156, 1);
+    border-radius: 10px;
+    box-shadow: none;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#addbutton .but2 {
+    border-width: 0px;
+    width: 124px;
+    height: 38px;
+    background: inherit;
+    background-color: rgba(221, 216, 216, 1);
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#addbutton .but1:hover,#addbutton .but2:hover{
+    background-color: #1ABC9C;
+    color: white;
+}
+
+#updatebutton {
+    display: none;
+    border-width: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 454px;
+    height: 711px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #1ABC9C;
+    font-family: 'Arial Normal', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    letter-spacing: normal;
+    text-align: center;
+    text-transform: none;
+}
+
+#updatebutton form p:nth-child(1) {
+    font-family: '黑体 Bold', '黑体';
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    color: #1ABC9C;
+}
+
+#updatebutton form p span {
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    color: #1ABC9C;
+    font-size: 18px;
+    text-align: right;
+}
+
+#updatebutton form p input,form p select{
+    width: 300px;
+    height: 30px;
+    padding: 3px 2px 3px 2px;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    outline: none;
+    border: 1px #1ABC9C solid;
+    margin-top: 10px;
+}
+
+#updatebutton form p select{
+    margin-left: 30px;
+}
+
+#updatebutton .up1 {
+    width: 124px;
+    height: 38px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(26, 188, 156, 1);
+    border-radius: 10px;
+    box-shadow: none;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#updatebutton .up2 {
+    border-width: 0px;
+    width: 124px;
+    height: 38px;
+    background: inherit;
+    background-color: rgba(221, 216, 216, 1);
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+    font-family: '黑体';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    color: #1ABC9C;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+#updatebutton .up1:hover,#updatebutton .up2:hover{
+    background-color: #1ABC9C;
+    color: white;
+}

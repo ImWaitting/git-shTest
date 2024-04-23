@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.ProductMapper">
+
+    <resultMap id="Products" type="com.csdj.pojo.Product">
+        <id column="productId" property="productId" />
+        <association property="store" column="storeId" javaType="Store">
+            <association property="customer" column="customerId" javaType="Customer"/>
+        </association>
+    </resultMap>
+    <select id="getProducts" resultMap="Products">
+        SELECT p.`productId`, p.`productName`,p.`price`,p.image,s.`storeName`,p.`status`,s.`sellCategory`,p.`description`,c.`mobilePhone`
+        FROM `product`AS p,`store`AS s,`customermanagement` AS c WHERE p.`storeId` = s.`storeId` AND c.`customerId`=s.`customerId`
+        <if test="productName != null and productName != ''">
+            and p.`productName` like  concat('%',#{productName},'%')
+        </if>
+    </select>
+    <select id="getProductById" resultMap="Products">
+        SELECT p.`productId`, p.`productName`,p.`price`,p.image,s.`storeName`,p.`status`,s.`sellCategory`,p.`description`,c.`mobilePhone`
+        FROM `product`AS p,`store`AS s,`customermanagement` AS c WHERE p.`storeId` = s.`storeId` AND c.`customerId`=s.`customerId`
+        AND p.productId=#{productId}
+    </select>
+    <insert id="addProduct" parameterType="Product">
+        INSERT INTO `product`(`productName`,`price`,`storeId`,`image`,`status`,`description`)
+        VALUES (#{productName},#{price},#{store.storeId},#{image},#{status},#{description})
+    </insert>
+    <update id="updateProductbyid">
+        UPDATE `product` SET `status` = #{status}  WHERE `productId` = #{productId}
+    </update>
+    <delete id="deletebyid">
+        DELETE FROM `product` WHERE `productId` = #{productId}
+    </delete>
+
+</mapper>

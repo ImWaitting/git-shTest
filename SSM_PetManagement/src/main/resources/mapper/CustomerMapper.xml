@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.CustomerMapper">
+
+    <select id="getAllCustomer" resultType="com.csdj.pojo.Customer">
+        select * from customermanagement
+        where 1 = 1
+        <if test="mobilePhone != null">
+            and mobilePhone like concat('%',#{mobilePhone},'%')
+        </if>
+    </select>
+    <insert id="addCustomer" parameterType="com.csdj.pojo.Customer">
+        INSERT INTO customermanagement(IDcard,`nickName`,`studentNo`,`mobilePhone`,`status`,`sex`,`account`,`passWord`,`createTime`)
+        VALUES (#{IDcard},#{nickName},#{studentNo},#{mobilePhone},'正常',#{sex},#{account},#{passWord},NOW())
+    </insert>
+    <delete id="deleteCustomerbyid">
+        DELETE FROM customermanagement WHERE customerId = #{id}
+
+    </delete>
+    <update id="updateCustomer">
+        UPDATE customermanagement SET
+                                      `nickName` = #{nickName},
+                                      `studentNo` = #{studentNo},
+                                      `mobilePhone` = #{mobilePhone},
+                                      `status` = #{status},
+                                      `sex` = #{sex},
+                                      `passWord`=#{passWord}
+                                       WHERE customerId = #{customerId}
+
+    </update>
+    <select id="getCustomerByAccountAndPassWord" resultType="Customer">
+
+        SELECT * FROM customermanagement WHERE account = #{account} AND `passWord`= #{passWord}
+    </select>
+    <update id="realNameAuthentication">
+        UPDATE customermanagement
+        SET `IDcard` = #{IDcard},`contact`= #{contact}
+        WHERE customerId = #{customerId}
+
+    </update>
+    <update id="updateCustomerInfo" parameterType="Customer">
+        UPDATE customermanagement
+        SET `nickName`    = #{nickName},
+            `studentNo`   = #{studentNo},
+            `WeChat`      = #{weChat},
+            `mobilePhone` = #{mobilePhone},
+            `sex`         = #{sex},
+            `passWord`    = #{passWord}
+        WHERE customerId = #{customerId}
+    </update>
+</mapper>

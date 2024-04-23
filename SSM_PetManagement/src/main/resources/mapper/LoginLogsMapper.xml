@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.LoginLogsMapper">
+    <select id="pageLoginLogs" resultType="com.csdj.pojo.LoginLogs">
+        SELECT * FROM `loginlogs`
+    </select>
+
+    <select id="getLoginLogsByPhone" resultType="com.csdj.pojo.LoginLogs">
+        SELECT * FROM `loginlogs` WHERE `mobliePhone`=#{phone} ORDER BY loginTime DESC LIMIT 1
+    </select>
+
+    <select id="getLoginLogsPhone" resultType="com.csdj.pojo.LoginLogs" parameterType="string">
+        SELECT * FROM `loginlogs`
+        <if test="phone != null and phone !='' ">
+            WHERE `mobliePhone` LIKE CONCAT('%',#{phone},'%')
+        </if>
+    </select>
+
+    <delete id="deleteLoginLogs" parameterType="int">
+        DELETE FROM `loginlogs` WHERE `id`=#{id}
+    </delete>
+
+    <insert id="addLoginLogs" parameterType="com.csdj.pojo.LoginLogs">
+        INSERT INTO `loginlogs`(`name`,`mobliePhone`,`email`,`ipAddress`,`loginTime`,`role`,`lastLoginTime`)
+        VALUES(#{name},#{mobliePhone},#{email},#{ipAddress},#{loginTime},#{role},#{lastLoginTime})
+    </insert>
+</mapper>

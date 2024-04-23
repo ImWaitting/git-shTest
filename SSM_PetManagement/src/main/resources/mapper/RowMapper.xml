@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.RoleMapper">
+    <select id="getRole" resultType="com.csdj.pojo.Role">
+        select * from rolemanagement where account=#{account} and passWord=#{passWord}
+    </select>
+
+    <select id="pageRole" resultType="com.csdj.pojo.Role">
+        SELECT * FROM `rolemanagement`
+    </select>
+
+    <select id="getRolePhone" resultType="com.csdj.pojo.Role" parameterType="string">
+        SELECT * FROM `rolemanagement`
+        <if test="phone != null and phone !='' ">
+            WHERE `mobilePhone` LIKE CONCAT('%',#{phone},'%')
+        </if>
+    </select>
+
+    <insert id="insertRole" parameterType="com.csdj.pojo.Role">
+        INSERT INTO `rolemanagement`(`name`,`email`,`mobilePhone`,`status`,`role`,`account`,`passWord`,`createTime`)
+        VALUES (#{name},#{email},#{mobilePhone},#{status},#{role},#{account},#{passWord},#{createTime})
+    </insert>
+
+    <delete id="deleteRole" parameterType="int">
+        DELETE FROM `rolemanagement` WHERE `userId`=#{id}
+    </delete>
+
+    <update id="updateRole" parameterType="com.csdj.pojo.Role">
+        UPDATE `rolemanagement`
+        set
+        `name`=#{name},
+        `email`=#{email},
+        `mobilePhone`=#{mobilePhone},
+        `status`=#{status},
+        `role`=#{role},
+        `account`=#{account},
+        `passWord`=#{passWord}
+        where   `userId` = #{userId}
+    </update>
+</mapper>

@@ -1,0 +1,161 @@
+body{
+    font-size: 95%;
+}
+#box{
+    width: 100%;
+    margin: 0 auto;
+}
+#head{
+    background: #2fc1a4;
+    height: 6rem;
+    position: relative;
+}
+h2{
+    display: inline-block;
+    color: #ffffff;
+    line-height: 6rem;
+    margin: 0 4rem 0 4rem;
+}
+#loginUser{
+    display: inline-block;
+    margin-left: 58rem;
+}
+#useImage{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#loginUser span{
+    color: #ffffff;
+}
+img,span{
+    vertical-align: middle;
+}
+#updateuser{
+    display: none;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    background: #ffffff;
+    text-align: center;
+    border-radius: 0.2rem;
+    width: 8rem;
+    vertical-align:top;
+    height: 100%;
+}
+#updateuser div{
+    margin-top: 2rem;
+}
+#color{
+    margin-left:20px;
+}
+#color,#close{
+    border-left: #259a83 2px solid;
+    padding:0 20px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+#loginInfo{
+    display: inline-block;
+    width: 120px;
+    height: 30px;
+}
+#loginLogs{
+    display: none;
+    position: absolute;
+    text-align: left;
+    margin-top: 29px;
+    width: 280px;
+    right: 70px;
+    color: #a5a5a5;
+    background: #ffffff;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+#closeInfo{
+    display: none;
+    position: absolute;
+    right: 20px;
+    border: solid 1px black;
+    background: #ffffff;
+}
+#loginLogs ul li{
+    padding: 10px 0;
+}
+#color:hover,#close:hover,.colorbox:hover,#loginInfo:hover{
+    cursor: pointer;
+}
+#headColor{
+    display: none;
+    position: absolute;
+    right: 70px;
+}
+#Colors{
+    margin-top: 29px;
+    width: 260px;
+    background: #ffffff;
+    padding: 20px 10px;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.colorbox{
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px 0;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 60px;
+}
+#basis{
+    color: #ffffff;
+    background: #4d5368;
+    float: left;
+    width: 13%;
+    height: 90%;
+    text-align: center;
+}
+li:hover{
+    cursor: pointer;
+}
+#basis a{
+    color: #cccccc;
+    text-decoration: none;
+}
+#basis a.clicked{
+    color: #ffffff;
+    text-decoration: none;
+}
+#connect ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#connect li{
+    margin-top: 2rem;
+}
+h3{
+    margin: 0;
+    padding-top:1rem;
+}
+#table{
+    float: left;
+    width: 87%;
+    height: 90%;
+    background: #f2f2f2;
+}
+.u42{
+    display: inline-block;
+    background-image: url("/static/images/framework/u42.svg");
+    background-size: cover; /* 背景图片覆盖整个元素 */
+    background-repeat: no-repeat; /* 背景图片不重复 */
+    background-position: center; /* 背景图片居中 */
+    width: 20px;
+    height: 20px;
+}
+.listInfo{
+    display: inline-block;
+    width: 80px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.OperationLogsMapper">
+    <select id="pageOperationLogs" resultType="com.csdj.pojo.OperationLogs">
+        SELECT * FROM `operationlogs`
+    </select>
+
+    <select id="getOperationLogsPhone" resultType="com.csdj.pojo.OperationLogs" parameterType="string">
+        SELECT * FROM `operationlogs`
+        <if test="phone != null and phone !='' ">
+            WHERE `mobilePhone` LIKE CONCAT('%',#{phone},'%')
+        </if>
+    </select>
+
+    <delete id="deleteOperationLogs" parameterType="int">
+        DELETE FROM `operationlogs` WHERE `id`=#{id}
+    </delete>
+
+    <insert id="addOperationLogs" parameterType="com.csdj.pojo.OperationLogs">
+        INSERT INTO `operationlogs`(`store`,`mobilePhone`,`category`,`operationTime`,`operationContext`)
+        VALUES(#{store},#{mobilePhone},#{category},Now(),#{operationContext})
+    </insert>
+</mapper>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.mapper.StoreMapper">
+
+    <resultMap id="Stores" type="com.csdj.pojo.Store">
+        <id column="storeId" property="storeId" />
+        <association property="customer" column="customerId" javaType="Customer"/>
+    </resultMap>
+
+    <select id="getStoreList" resultMap="Stores">
+        select s.*,c.* from `customermanagement`as c, `store` as s
+                                      where c.`customerId`  = s.`customerId`
+            <if test="storeName != null and storeName != ''">
+                and s.`storeName` like concat('%',#{storeName},'%')
+            </if>
+    </select>
+    <select id="getStoreByCustomerId" resultMap="Stores">
+        select * from `store` where `customerId` = #{customerId}
+    </select>
+    <insert id="addStore" parameterType="Store">
+        insert into `store`(`storeName`,`customerId`,`status`,`address`,`sellCategory`)
+        values(#{storeName},#{customer.customerId},#{status},#{address},#{sellCategory})
+    </insert>
+    <update id="updateCustomerId">
+        update `store` set `status` = "正常" where `storeId` = #{storeId}
+    </update>
+    <update id="daletebyid">
+        delete from `store` where `storeId` = #{storeId}
+    </update>
+</mapper>
